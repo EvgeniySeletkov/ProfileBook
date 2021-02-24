@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProfileBook.Views.AddProfilePage"
+             Title="Add Profile">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ic_save.png" Command="{Binding SaveProfileCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <ImageButton Source="pic_profile.png" BackgroundColor="White" HeightRequest="160" />
+            <Entry Placeholder="NickName" />
+            <Entry Placeholder="Name" />
+            <Editor Placeholder="Description" HeightRequest="160" BackgroundColor="#D3D3D3"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

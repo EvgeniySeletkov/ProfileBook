@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProfileBook.Views.SignInPage"
-             Title="Users SignIn">
+             Title="{Binding Title}}">
     <ContentPage.Content>
         <StackLayout Padding="36, 36, 36, 50" HorizontalOptions="FillAndExpand">
 
@@ -12,14 +12,13 @@
             </StackLayout>
 
             <StackLayout VerticalOptions="EndAndExpand">
-                <Button x:Name="ButtonSignIn" Text="SIGN IN" BackgroundColor="#CC6633" IsEnabled="False" />
+                <Button x:Name="ButtonSignIn" Text="SIGN IN" BackgroundColor="#CC6633" IsEnabled="False" Command="{Binding SignInCommand}" />
                 <Label x:Name="LabelSignUp" HorizontalOptions="Center">
                     <Label.FormattedText>
                         <FormattedString>
                             <Span Text="SIGN UP" TextColor="Blue" TextDecorations="Underline">
                                 <Span.GestureRecognizers>
-                                    <TapGestureRecognizer Command="{Binding ClickCommand}"
-                                          CommandParameter="https://xamarin.com" />
+                                    <TapGestureRecognizer Command="{Binding SignUpCommand}" />
                                 </Span.GestureRecognizers>
                             </Span>
                         </FormattedString>

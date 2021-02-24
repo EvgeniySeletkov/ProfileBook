@@ -3,19 +3,66 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProfileBook.Views.MainListPage"
-             Title="Main List">
+             Title="{Binding Title}">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="LogOut" Order="Primary" />
-        <ToolbarItem Text="Settings" Order="Primary" />
+        <ToolbarItem IconImageSource="ic_exit_to_app.png" Command="{Binding SignOutCommand}" />
+        <ToolbarItem IconImageSource="ic_settings.png" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>
 
         <Grid>
+            
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
+
+            <ScrollView Grid.Row="0">
+                <StackLayout>
+                    <ListView ItemsSource="{Binding }">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <ViewCell.ContextActions>
+                                        <MenuItem Text="Edit"/>
+                                        <MenuItem Text="Delete"/>
+                                    </ViewCell.ContextActions>
+                                    
+                                    <StackLayout Orientation="Horizontal"
+                                                 HorizontalOptions="FillAndExpand">
+                                        <Image>
+
+                                        </Image>
+                                        <StackLayout VerticalOptions="Center" Margin="10, 0, 0, 0">
+                                            <Label FontAttributes="Bold"/>
+                                            <Label />
+                                            <Label />
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </ScrollView>
+
+            <Label Text="No profiles added" IsVisible="True" HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+
+            <ImageButton Grid.Row="0" Source="ic_add.png"
+                         WidthRequest="85"
+                         HorizontalOptions="End" 
+                         VerticalOptions="End"
+                         BorderWidth="10"
+                         CornerRadius="100"
+                         Margin="0,0,20,40" 
+                         Padding="30"
+                         Scale="0.8"
+                         BorderColor="#2B3C3C"
+                         BackgroundColor="#1E90FF" 
+                         Command="{Binding AddProfileCommand}"/>
+
         </Grid>
 
     </ContentPage.Content>
