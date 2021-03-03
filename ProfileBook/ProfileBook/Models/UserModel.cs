@@ -6,10 +6,10 @@ using System.Text;
 namespace ProfileBook.Models
 {
     [Table("Users")]
-    public class User
+    public class UserModel : IEntityBase
     {
         [PrimaryKey, AutoIncrement]
-        public int UserId { get; set; }
+        public int Id { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
     }

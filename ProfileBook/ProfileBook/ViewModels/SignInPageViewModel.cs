@@ -28,15 +28,15 @@ namespace ProfileBook.ViewModels
             this.navigationService = navigationService;
         }
 
-        public ICommand SignInCommand => new Command(SignIn);
-        public ICommand SignUpCommand => new Command(SignUp);
+        public ICommand SignInTapCommand => new Command(OnSignInTap);
+        public ICommand SignUpTapCommand => new Command(OnSignUpTap);
 
-        private async void SignIn()
+        private async void OnSignInTap()
         {
-            await navigationService.NavigateAsync($"{nameof(MainListPage)}");
+            await navigationService.NavigateAsync($"/{nameof(NavigationPage)}/{nameof(MainListPage)}");
         }
 
-        private async void SignUp()
+        private async void OnSignUpTap()
         {
             await navigationService.NavigateAsync($"{nameof(SignUpPage)}");
         }

@@ -2,17 +2,27 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProfileBook.Views.AddProfilePage"
-             Title="Add Profile">
+             Title="{Binding Title}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem IconImageSource="ic_save.png" Command="{Binding SaveProfileCommand}"/>
+        <ToolbarItem IconImageSource="ic_save.png" 
+                     Command="{Binding SaveProfileTapCommand}"/>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
         <StackLayout>
-            <ImageButton Source="pic_profile.png" BackgroundColor="White" HeightRequest="160" />
-            <Entry Placeholder="NickName" />
-            <Entry Placeholder="Name" />
-            <Editor Placeholder="Description" HeightRequest="160" BackgroundColor="#D3D3D3"/>
+            
+            <ImageButton BackgroundColor="White" 
+                         HeightRequest="160"
+                         Source="{Binding Image}"
+                         Command="{Binding PickImageCommand}" />
+            
+            <Entry Placeholder="NickName" Text="{Binding NickName}" />
+            <Entry Placeholder="Name" Text="{Binding Name}" />
+            <Editor Placeholder="Description" 
+                    HeightRequest="160" 
+                    BackgroundColor="#D3D3D3"
+                    Text="{Binding Description}" />
+            
         </StackLayout>
     </ContentPage.Content>
     

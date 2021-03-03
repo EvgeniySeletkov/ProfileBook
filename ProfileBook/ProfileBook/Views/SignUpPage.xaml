@@ -7,12 +7,16 @@
         <StackLayout Padding="36, 36, 36, 50" HorizontalOptions="FillAndExpand">
 
             <StackLayout VerticalOptions="CenterAndExpand">
-                <Entry x:Name="EntryLogin" Placeholder="Login" />
-                <Entry x:Name="EntryPass" Placeholder="Password" IsPassword="True" />
-                <Entry x:Name="EntryConfirmPass" Placeholder="Confirm Password" IsPassword="True" />
+                <Entry Placeholder="Login" />
+                <Entry Placeholder="Password" IsPassword="True" />
+                <Entry Placeholder="Confirm Password" IsPassword="True" />
             </StackLayout>
 
-            <Button x:Name="ButtonSignUp" Text="SIGN UP" BackgroundColor="#CC6633" VerticalOptions="CenterAndExpand" IsEnabled="False" Command="{Binding SignUpCommand}" />
+            <Button BackgroundColor="#CC6633" 
+                    VerticalOptions="CenterAndExpand" 
+                    IsEnabled="False"
+                    Text="SIGN UP"
+                    Command="{Binding SignUpTapCommand}" />
             
         </StackLayout>
     </ContentPage.Content>

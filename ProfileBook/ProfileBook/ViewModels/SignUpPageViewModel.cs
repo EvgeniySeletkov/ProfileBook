@@ -27,9 +27,9 @@ namespace ProfileBook.ViewModels
             this.navigationService = navigationService;
         }
 
-        public ICommand SignUpCommand => new Command(SignUp);
+        public ICommand SignUpTapCommand => new Command(OnSignUpTap);
 
-        private async void SignUp()
+        private async void OnSignUpTap()
         {
             await navigationService.GoBackAsync();
         }
